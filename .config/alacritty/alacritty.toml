@@ -1,5 +1,5 @@
 import = [
-	"~/.config/alacritty/themes/themes/distrotube.toml"
+	"~/.config/alacritty/colors/distrotube.toml"
 ]
 [colors]
 draw_bold_text_with_bright_colors = true
