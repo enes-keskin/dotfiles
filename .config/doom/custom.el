@@ -13,17 +13,17 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(use-package! tree-sitter
-   :hook (prog-mode . turn-on-tree-sitter-mode)
-   :hook (tree-sitter-after-on . tree-sitter-hl-mode)
-   :config
-   (require 'tree-sitter-langs)
-   ;; This makes every node a link to a section of code
-   (setq tree-sitter-debug-jump-buttons t
-         ;; and this highlights the entire sub tree in your code
-         tree-sitter-debug-highlight-jump-region t))
-(defun turn-on-tree-sitter-mode ()
-  "Turn on `tree-sitter-mode' in a buffer, if possible."
-  ;; FIX: Ignore only known errors. Log the rest, at least.
-  (ignore-errors
-    (tree-sitter-mode 1)))
+;; (use-package! tree-sitter
+;;    :hook (prog-mode . turn-on-tree-sitter-mode)
+;;    :hook (tree-sitter-after-on . tree-sitter-hl-mode)
+;;    :config
+;;    (require 'tree-sitter-langs)
+;;    ;; This makes every node a link to a section of code
+;;    (setq tree-sitter-debug-jump-buttons t
+;;          ;; and this highlights the entire sub tree in your code
+;;          tree-sitter-debug-highlight-jump-region t))
+;; (defun turn-on-tree-sitter-mode ()
+;;   "Turn on `tree-sitter-mode' in a buffer, if possible."
+;;   ;; FIX: Ignore only known errors. Log the rest, at least.
+;;   (ignore-errors
+;;     (tree-sitter-mode 1)))
