@@ -1,2 +1,1 @@
 require("keskin")
-print("hello")
