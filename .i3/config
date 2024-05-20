@@ -311,7 +311,7 @@ exec --no-startup-id start_conky_maia
 #exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id xautolock -time 20 -locker 'systemctl suspend' -notify 900 -notifier blurlock &
 exec --no-startup-id skype
-exec --no-startup-id firefox
+exec --no-startup-id sleep 5s && firefox
 exec --no-startup-id source /home/keskin/.cache/pypoetry/virtualenvs/imperum-cYokftwD-py3.11/bin/activate && emacs &
 exec --no-startup-id spotify
 #exec_always --no-startup-id ff-theme-util
