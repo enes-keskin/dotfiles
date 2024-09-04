@@ -25,3 +25,10 @@ My personal dotfiles for linux configurations.
 * spotify
 * Skype 
 
+# Fixes
+## "Watchdog did not stop" timeout at shutdown
+* echo "blacklist sp5100_tco" | sudo tee -a /etc/modprobe.d/blacklist-watchdog.conf
+## Pulseaudio delayed volume increase
+* edit /etc/pulse/daemon.cfg
+* `enable-deferred-volume = no`
+* pulseaudio -k && pulseaudio --start
