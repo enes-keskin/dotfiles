@@ -252,10 +252,12 @@ assign [class="teams-for-linux"] $wsF3
 assign [class="firefox"] $ws1
 assign [class="Emacs"] $ws2
 assign [class="Spotify"] $wsF9
+assign [class="BlueMail"] $wsF4
 
 workspace $wsF2 output DP-2
-workspace $wsF9 output DP-2
 workspace $wsF3 output DP-2
+workspace $wsF4 output DP-2
+workspace $wsF9 output DP-2
 workspace $ws1 output DP-0
 
 # Open specific applications in floating mode
@@ -362,6 +364,7 @@ exec --no-startup-id teams-for-linux
 exec --no-startup-id sleep 5s && firefox
 exec --no-startup-id emacs &
 exec --no-startup-id spotify
+exec --no-startup-id bluemail
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 

@@ -76,3 +76,4 @@
 ;; they are implemented.
 (map! :n "SPC ?\t ?\t" #'+workspace/other)
 (map! :n "SPC [tab] [tab]" #'+workspace/other)
+(add-hook 'python-mode-hook #'(lambda () (setq flycheck-checker 'python-ruff)))
