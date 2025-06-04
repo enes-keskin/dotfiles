@@ -14,6 +14,7 @@ default_floating_border normal
 # Hide borders
 hide_edge_borders none
 
+no_focus [window_role="pop-up"]
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
@@ -27,7 +28,8 @@ font xft:URWGothic-Book  8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec --no-startup-id kitty zsh -c 'tmux has-session -t main 2>/dev/null && tmux new-window -t main || tmux new-session -s main'
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -114,15 +116,15 @@ bindsym $mod+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -247,7 +249,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # assign [class="Thunderbird"] $ws1
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
-assign [class="Skype"] $wsF2
+#assign [class="Skype"] $wsF2
 assign [class="teams-for-linux"] $wsF3
 assign [class="firefox"] $ws1
 assign [class="Emacs"] $ws2
@@ -358,8 +360,10 @@ exec --no-startup-id clipit
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 #exec --no-startup-id xautolock -time 10 -locker blurlock
-exec --no-startup-id xautolock -time 20 -locker 'systemctl suspend' -notify 900 -notifier blurlock &
-exec --no-startup-id skype
+# exec --no-startup-id xautolock -time 20 -locker 'systemctl suspend' -notify 900 -notifier blurlock &
+exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 'i3lock -i ~/Pictures/wallpapers/Courtside-Sunset.png -t -ef -n' ''
+
+#exec --no-startup-id skype
 exec --no-startup-id teams-for-linux
 exec --no-startup-id sleep 5s && firefox
 exec --no-startup-id emacs &
@@ -367,7 +371,7 @@ exec --no-startup-id spotify
 exec --no-startup-id bluemail
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-
+exec --no-startup-id xset s 0 0; xset s off; xset s noblank
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources

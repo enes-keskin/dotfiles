@@ -33,7 +33,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
-
+(setq doom-font (font-spec :family "Hack Nerd Font" :size 10.0))
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
@@ -76,4 +76,12 @@
 ;; they are implemented.
 (map! :n "SPC ?\t ?\t" #'+workspace/other)
 (map! :n "SPC [tab] [tab]" #'+workspace/other)
+(defun my/auto-activate-venv ()
+  "Auto activate virtualenv if .venv exists."
+  (let ((venv-path (expand-file-name ".venv" (projectile-project-root))))
+    (when (file-directory-p venv-path)
+      (pyvenv-activate venv-path))))
+
+(add-hook 'python-mode-hook #'my/auto-activate-venv)
+
 (add-hook 'python-mode-hook #'(lambda () (setq flycheck-checker 'python-ruff)))
