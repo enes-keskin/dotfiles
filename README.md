@@ -4,12 +4,16 @@ My personal dotfiles for linux configurations.
 # Requirements
 ## i3
 ### Sound
+* pipewire
+* wireplumber
+* pipewire-v4l2  
+#### Deprecated
 * pa-applet (from git using yay)
 * install_pavu
 * pavucontrol
 
 ## Others
-* alacritty
+* kitty | alacritty
 * firefox
 * logseq
 * neovim
@@ -23,7 +27,6 @@ My personal dotfiles for linux configurations.
 * * git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ## Snap
 * spotify
-* Skype 
 
 # Fixes
 ## "Watchdog did not stop" timeout at shutdown
